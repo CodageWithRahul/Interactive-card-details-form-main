@@ -1,0 +1,96 @@
+ <!-- {CodageWithRahul} -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>interactive-card-details-form-main</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="main-conteiner">
+    <div class="left-section">
+      <img src="/images/bg-main-mobile.png" alt="mobile-png" class="moblie-bg">
+      <div class="bg-img">
+        <img src="/images/bg-main-desktop.png" class="mobile-none">
+        <span class="card-logo"><img src="/images/card-logo.svg" alt="logo"></span>
+      </div>
+      <div class="f-img">
+        <img src="/images/bg-card-front.png">
+
+        <h1 class="card-number-show number">0000 0000 0000 0000 </h1>
+
+        <h2 class="name">Jane Appleseed</h2>
+
+        <span class=" exp date">
+          <span class="mm">00</span>
+          <span class="by none">/</span>
+          <span class="yy">00</span>
+        </span>
+      </div>
+      <div class="s-img">
+        <img src="/images/bg-card-back.png">
+
+        <p class="cv">000</p>
+      </div>
+    </div>
+    <div class="right-section ">
+      <form>
+        <div class="card-h-name">
+          <label for="card-hold-name">Cardholder Name</label>
+          <input type="text" id="card-hold-name" class="border" placeholder=" e.g. Jane Appleseed" required>
+          <div id="error-msg-name" class="errorr display">can't be blank</div>
+
+
+        </div>
+        <div class="card-num ">
+          <label for="card-number">Card Number</label>
+          <input type="number" class="border" id="card-number" maxlength="16" placeholder="e.g. 1234 5678 9123 0000"
+            oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength)"
+            minlength="16" maxLenghth="16" required>
+          <div id="error-msg-num" class="errorr display">can't be blank</div>
+        </div>
+        <div class="flex ">
+          <div class="ex-date flex-col">
+            <label for="exp-date">Exp. Date (MM/YY)</label>
+            <div class="flex exx-date">
+              <input type="number" class="border" id="exp-date" value="" placeholder="MM" maxlength="2"
+                oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength)"
+                minlength="2" maxLenghth="2" required>
+              <input type="number" class="border" placeholder="YY" id="exp-yy" maxlength="2"
+                oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength)"
+                minlength="2" maxLenghth="2" required>
+            </div>
+            <div id="error-msg-exp" class="errorr display">can't be blank</div>
+          </div>
+          <div class="cv-no flex-col">
+            <label for="cvv-no">CVV</label>
+            <input type="text" class="border" id="cvv-no" placeholder="e.g. 123" maxlength="3"
+              oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0,this.maxLength)"
+              minlength="3" maxLenghth="3" required>
+            <div id="error-msg-cvv" class="errorr display">can't be blank</div>
+          </div>
+        </div>
+        <a href="#">
+          <input type="button" value="Confirm" id="confirm">
+        </a>
+      </form>
+      <div class="thank-you none">
+        <img src="/images/icon-complete.svg">
+        <h2>Thank You</h2>
+        <p>We've added your card details</p>
+        <a href="#">
+          <input type="button" value="continue" id="continue">
+        </a>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+
+
+</body>
+
+</html>
